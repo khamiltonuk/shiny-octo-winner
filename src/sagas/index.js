@@ -2,8 +2,11 @@ import { call, put, takeLatest } from "redux-saga/effects";
 
 import * as types from "../constants";
 
-const endpoint = "https://api.punkapi.com/v2/beers";
-const Api = () => fetch(endpoint).then(response => response.json());
+const Api = query => {
+  const params = query ? `?beer_name=${query}` : "";
+  const endpoint = `https://api.punkapi.com/v2/beers${params}`;
+  return fetch(endpoint).then(response => response.json());
+};
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchBeers(action) {
