@@ -5,14 +5,31 @@ const Search = props => {
   console.log(props);
   return (
     <Fragment>
-      <h1>Search</h1>
-      <input onChange={props.handleInputChange} />
-      <ul>
-        {props.beers &&
-          props.beers.map(beer => {
-            return <li key={beer.id}>{beer.name}</li>;
-          })}
-      </ul>
+      <form className="search-form">
+        <div className="input-wrapper">
+          <input
+            type="text"
+            className="search"
+            placeholder="find a beer"
+            onChange={props.handleInputChange}
+          />
+          {props.loading && <div className="spinner">loading</div>}
+        </div>
+        <ul className="suggestions">
+          {props.beers &&
+            props.beers.map(beer => {
+              return (
+                <li key={beer.id}>
+                  {beer.name}
+                  <span className="abv">
+                    ABV:
+                    {beer.abv}
+                  </span>
+                </li>
+              );
+            })}
+        </ul>
+      </form>
     </Fragment>
   );
 };

@@ -6,7 +6,8 @@ import Search from "./Search";
 const SearchContainer = connect(
   function mapStateToProps(state) {
     return {
-      beers: state.beers
+      beers: state.beers,
+      loading: state.loading
     };
   },
   function mapDispatchToProps(dispatch) {
