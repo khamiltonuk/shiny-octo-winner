@@ -1,10 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { compose, lifecycle, withHandlers } from "recompose";
 
 const Search = props => {
-  console.log(props);
   return (
-    <Fragment>
       <form className="search-form">
         <div className="input-wrapper">
           <input
@@ -30,7 +28,6 @@ const Search = props => {
             })}
         </ul>
       </form>
-    </Fragment>
   );
 };
 
