@@ -1,6 +1,6 @@
 # Typeahead with Redux saga
 
-![Screenshot](/src/preview.gif)
+![Screenshot](/src/images/preview.gif)
 
 ## Todo
 
